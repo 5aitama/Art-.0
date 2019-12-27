@@ -1,6 +1,6 @@
 ![Header](/Images/header.png)
 # Art .0
-A voxel cube (like minecraft) made with Unity.
+A voxel cube (minecraft like) made with Unity.
 
 ## Requierement
 ```
