@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ChunkRotate : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class ChunkRotate : MonoBehaviour
         
         if(controlRotation)
         {
-            if(!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
+            if(!EventSystem.current.IsPointerOverGameObject() && EventSystem.current.currentSelectedGameObject == null)
             {
                 if(Input.GetMouseButtonDown(0))
                 {
@@ -66,5 +67,12 @@ public class ChunkRotate : MonoBehaviour
     public void SetControlRotate(bool val)
     {
         this.controlRotation = val;
+    }
+
+    public void SetHeight(float y)
+    {
+        var pos = transform.position;
+        pos.y = y / 2f;
+        transform.position = pos;
     }
 }
